@@ -1,0 +1,10 @@
+{
+  "name": "p1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "郑思翰",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.0"
+  }
+}
