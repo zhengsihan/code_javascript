@@ -21,11 +21,16 @@
             document.querySelector("#makeNewWindow2").addEventListener('click', () => {
                 win2 = mainModel.makeWin();
                 win2.loadFile('index.html');
-            })
+            });
 
             let { ipcRenderer } = require('electron');
-            document.querySelector("#sendMsg1").addEventlistener('click', () => {
-                ipcRenderer.send('msg_render2main', { name: 'param1'}, {name: 'param2'} );
+            document.querySelector("#sendMsg1").addEventListener('click', () => {
+                ipcRenderer.send('msg_render2main', { name: 'param1' }, { name: 'param2' } );
+            });
+            ipcRenderer.on('msg_main2render', (event, param1, param2) => {
+                console.log(param1);
+                console.log(param2);
+                console.log(event.sender);
             });
         </script>
 
