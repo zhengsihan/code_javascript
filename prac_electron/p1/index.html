@@ -6,9 +6,34 @@
         <div style="padding: 60px; font-size: 38px; font-weight: blold; text-align: center;">
             Hello World
         </div>
+
+        <button id="openDevToolsBtn">打开开发者工具</button>
+        <button id="makeNewWindow2">打开窗口</button>
+        <button id="sendMsg1">发消息</button>
+        <script>
+            let { remote } = require('electron');
+            document.querySelector("#openDevToolsBtn").addEventListener('click', function() {
+                remote.getCurrentWindow().webContents.openDevTools();
+            })
+
+            let mainModel = remote.require('./mainModel');
+            let win2 = null;
+            document.querySelector("#makeNewWindow2").addEventListener('click', () => {
+                win2 = mainModel.makeWin();
+                win2.loadFile('index.html');
+            })
+
+            let { ipcRenderer } = require('electron');
+            document.querySelector("#sendMsg1").addEventlistener('click', () => {
+                ipcRenderer.send('msg_render2main', { name: 'param1'}, {name: 'param2'} );
+            });
+        </script>
+
     </body>
     <script src="./objRender.js"></script>
     <script>
-        alert(window.objRender.key)
+        // alert(window.objRender.key);
+        // let ObjRender2 = require('./ObjRender2');
+        // alert(ObjRender2.key);
     </script>
 </html>

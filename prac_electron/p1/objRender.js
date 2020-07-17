@@ -1,1 +1,1 @@
-window.objRender = {key: 'value'}
+window.objRender = {key: 'value1'}
