@@ -6,3 +6,6 @@ node_modules/*
 
 #vs code
 .vscode/*
+
+#webpack输出
+dist/*
