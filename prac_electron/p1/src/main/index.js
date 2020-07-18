@@ -6,7 +6,23 @@ app.on('ready', function(){
     win = new BrowserWindow({
         webPreferences: { nodeIntegration: true}
     });
-    win.loadFile('index.html');
+    //electron本地启动
+    //win.loadFile('index.html');
+
+    //webpack修改
+    let path = require('path');
+    let URL = require('url');
+    let url = '';
+    if(process.env.NODE_ENV !== 'production'){
+        url = 'http://localhost:' + process.env.ELECTRON_WEBPACK_WDS_PORT;
+    }else{
+        url = URL.format({
+            pathname: path.join(__dirname, 'index.html'),
+            protocol: 'file'
+        });
+    }
+    win.loadURL(url);
+
     win.on('closed', function(){
         win = null
     });

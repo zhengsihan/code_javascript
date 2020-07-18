@@ -12,5 +12,10 @@
   "scripts": {
     "start": "electron-webpack dev",
     "build": "electron-webpack build"
-  }
+  },
+  "electronWebpack": {
+    "renderer": {
+      "template": "src/renderer/index.html"
+    }
+  }  
 }
