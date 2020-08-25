@@ -5,16 +5,10 @@
         <title></title>
         <script type="text/javascript">
             window.onload = function() {
-                //1.get canvas
                 var cnv = document.getElementById("canvas");
-
-                //2.get context
                 var cxt = cnv.getContext("2d");
-
-                //3.draw something
-                cxt.moveTo(50, 100);
-                cxt.lineTo(150,50);
-                cxt.stroke();
+                cxt.strokeStyle = "red";
+                cxt.strokeRect(10, 10, 50, 75);
             }
         </script>
     </head>
