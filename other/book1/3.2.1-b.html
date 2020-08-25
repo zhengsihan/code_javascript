@@ -10,9 +10,6 @@
                 ctx.beginPath();
                 //ctx.arc(x, y, 半径, 开始角度, 结束角度, anticlockwise(true为逆时针))
                 ctx.arc(75, 75, 50, 90*Math.PI/180, 180*Math.PI/180, false);
-                //closePath()会在弧的中间连一条直线，
-                //没有closePath()直接stroke()，只会有弧
-                ctx.closePath();
                 ctx.stroke();
             }
         </script>
