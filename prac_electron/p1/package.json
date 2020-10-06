@@ -5,7 +5,7 @@
   "author": "zhengsihan",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.1.0",
+    "electron": "^9.3.0",
     "electron-webpack": "^2.8.2",
     "webpack": "^4.43.0"
   },
